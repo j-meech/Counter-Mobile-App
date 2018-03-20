@@ -3,12 +3,12 @@ import { StyleSheet, Text, TouchableHighlight, } from 'react-native';
 
 
 
-const Button = ({ underlayColor, labelText, onPress, disabled }) => {
+const Button = ({ underlayColor, labelText, onPress, disabled, resetButtonStyle, resetLabelStyle }) => {
 
 	
 		return (
-		    <TouchableHighlight disabled={ disabled } style={[styles.button, disabled ? styles.disabled : null]} underlayColor={ underlayColor } onPress={ onPress } >
-			    <Text style={styles.buttonLabel}>{ labelText }</Text>
+		    <TouchableHighlight disabled={ disabled } style={[styles.button, resetButtonStyle, disabled ? styles.disabled : null]} underlayColor={ underlayColor } onPress={ onPress } >
+			    <Text style={[styles.buttonLabel, resetLabelStyle]}>{ labelText }</Text>
 			</TouchableHighlight>
 		);
 };
